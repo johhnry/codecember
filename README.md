@@ -9,7 +9,7 @@ The idea is to produce one sketch a day exploring different concepts and ideas r
 | ![](./2020/day_1/codecember_1.gif) | ![](./2020/day_2/codecember_2.gif) | ![](./2020/day_3/codecember_3.gif) |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- |
 | ![](./2020/day_4/codecember_4.gif) | ![](./2020/day_5/codecember_5.gif) | ![](./2020/day_6/codecember_6.gif) |
-|                                    |                                    |                                    |
+| ![](./2020/day_7/codecember_7.gif) |                                    |                                    |
 |                                    |                                    |                                    |
 |                                    |                                    |                                    |
 |                                    |                                    |                                    |
