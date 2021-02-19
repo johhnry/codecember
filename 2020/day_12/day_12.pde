@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Stack;
 
 float margin = 50;
@@ -90,7 +91,7 @@ String generateRandomPattern(int length, int depth) {
 class LSystem {
   private String state;
   private float forward, rotation;
-  private ArrayList<Rule> rules;
+  private List<Rule> rules;
   private int step = 0;
 
   // The stack of transforms, used with [ and ]

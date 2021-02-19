@@ -1,3 +1,5 @@
+import java.util.List;
+
 float margin = 100;
 
 
@@ -27,7 +29,7 @@ class Particle {
  * See also the wiki page : https://en.wikipedia.org/wiki/Grain_boundary
  */
 class Grain {
-  ArrayList<Particle> particles;
+  List<Particle> particles;
   PVector origin;
   
   Grain(float x, float y, int nParticles) {
@@ -76,11 +78,11 @@ class Grain {
  * It uses the dart throwing method
  * Could also implement the weighted sample elimination : http://www.cemyuksel.com/research/sampleelimination/
  */
-ArrayList<PVector> poissonDistributionScatterPoints(int nPoints, float radius) {
+List<PVector> poissonDistributionScatterPoints(int nPoints, float radius) {
   // The number of valid points put
   int n = 0;
   
-  ArrayList<PVector> points = new ArrayList<PVector>();
+  List<PVector> points = new ArrayList<PVector>();
   boolean valid;
   
   // Loop until we placed the right number of points or it's not valid
@@ -112,12 +114,12 @@ ArrayList<PVector> poissonDistributionScatterPoints(int nPoints, float radius) {
  * A crystal contains multiple grains
  */
 class Crystal {
-  ArrayList<Grain> grains;
+  List<Grain> grains;
   
   Crystal(int nGrains) {
     grains = new ArrayList<Grain>();
     
-    ArrayList<PVector> poissonDistrib = poissonDistributionScatterPoints(nGrains, 20);
+    List<PVector> poissonDistrib = poissonDistributionScatterPoints(nGrains, 20);
     
     for (PVector point : poissonDistrib) {
       int n = int(random(50, 100));

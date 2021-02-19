@@ -1,3 +1,5 @@
+import java.util.List;
+
 float margin = 80;
 
 /**
@@ -54,10 +56,10 @@ class ManhattanGrid {
   int cols, rows;
 
   // The list of points on the grid
-  ArrayList<IntVector2D> points;
+  List<IntVector2D> points;
 
   // Points put down some stones when they move
-  ArrayList<Stone> stones;
+  List<Stone> stones;
 
   ManhattanGrid(int cols, int rows) {
     this.cols = cols;

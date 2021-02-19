@@ -1,6 +1,8 @@
+import java.util.List;
+
 float margin = 50;
 
-ArrayList<Circle> circles;
+List<Circle> circles;
 float offset = 0;
 int nCircles = 7;
 

@@ -1,3 +1,5 @@
+import java.util.List;
+
 float margin = 100;
 
 /**
@@ -23,8 +25,7 @@ class Point {
     return sqrt(pow(other.y - y, 2) + pow(other.x - x, 2));
   }
 
-  @Override
-    boolean equals(Object o) {
+  boolean equals(Object o) {
     if (this == o)
       return true;
     if (o == null)
@@ -48,8 +49,8 @@ class Edge {
     this.b = b;
   }
 
-  @Override
-    boolean equals(Object o) {
+
+  boolean equals(Object o) {
     if (this == o)
       return true;
     if (o == null)
@@ -151,8 +152,8 @@ class Triangle {
   /**
    * Get list of edges
    */
-  ArrayList<Edge> getEdges() {
-    ArrayList<Edge> edges = new ArrayList<Edge>();
+  List<Edge> getEdges() {
+    List<Edge> edges = new ArrayList<Edge>();
     edges.add(new Edge(a, b));
     edges.add(new Edge(b, c));
     edges.add(new Edge(c, a));
@@ -229,8 +230,8 @@ Point randomPoint() {
 /**
  * Scatter random points on the canvas and return them as a list
  */
-ArrayList<Point> pointScatter(int nPoints) {
-  ArrayList<Point> points = new ArrayList<Point>();
+List<Point> pointScatter(int nPoints) {
+  List<Point> points = new ArrayList<Point>();
 
   for (int i = 0; i < nPoints; i++) {
     points.add(randomPoint());
@@ -243,7 +244,7 @@ ArrayList<Point> pointScatter(int nPoints) {
 /**
  * Compute a triangle containing all the given points
  */
-Triangle superTriangle(ArrayList<Point> points) {
+Triangle superTriangle(List<Point> points) {
   Point first = points.get(0);
   float minX = first.x, maxX = first.x;
   float minY = first.y, maxY = first.y;
@@ -276,8 +277,8 @@ Triangle superTriangle(ArrayList<Point> points) {
  * Bowyer–Watson algorithm for computing delaunay triangulation
  * See : https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm
  */
-ArrayList<Triangle> delaunayTriangulate(ArrayList<Point> points) {
-  ArrayList<Triangle> triangulation = new ArrayList<Triangle>();
+List<Triangle> delaunayTriangulate(List<Point> points) {
+  List<Triangle> triangulation = new ArrayList<Triangle>();
 
   // Add the super triangle
   Triangle superTriangle = superTriangle(points);
@@ -285,7 +286,7 @@ ArrayList<Triangle> delaunayTriangulate(ArrayList<Point> points) {
 
   // For every point
   for (Point point : points) {
-    ArrayList<Triangle> badTriangles = new ArrayList<Triangle>();
+    List<Triangle> badTriangles = new ArrayList<Triangle>();
 
     // Fill the array of bad triangles
     for (int i = triangulation.size() - 1; i >= 0; i--) {
@@ -297,12 +298,12 @@ ArrayList<Triangle> delaunayTriangulate(ArrayList<Point> points) {
       }
     }
 
-    ArrayList<Edge> closeMesh = new ArrayList<Edge>();
+    List<Edge> closeMesh = new ArrayList<Edge>();
 
     // For every bad triangle
     for (int i = 0; i < badTriangles.size(); i++) {
       // Get its list of edges
-      ArrayList<Edge> edges = badTriangles.get(i).getEdges();
+      List<Edge> edges = badTriangles.get(i).getEdges();
 
       // For every edge of that bad triangle
       for (Edge edge : edges) {
@@ -345,8 +346,8 @@ ArrayList<Triangle> delaunayTriangulate(ArrayList<Point> points) {
 }
 
 
-ArrayList<Point> points;
-ArrayList<Triangle> triangulation;
+List<Point> points;
+List<Triangle> triangulation;
 float time = 0;
 
 

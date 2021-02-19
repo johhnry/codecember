@@ -1,3 +1,5 @@
+import java.util.List;
+
 float margin = 50;
 
 // The buffer where we draw the letter
@@ -8,7 +10,7 @@ String text = "codecember";
 int letterIndex = 0;
 int changeFrame = 200;
 
-ArrayList<Particle> particles;
+List<Particle> particles;
 
 
 /**
@@ -88,7 +90,7 @@ void changeLetter() {
  * Check for black pixels and assign new targets
  */
 void assignTargets() {
-  ArrayList<PVector> targets = new ArrayList<PVector>();
+  List<PVector> targets = new ArrayList<PVector>();
 
   letterCanvas.loadPixels();
   for (int x = 0; x < letterCanvas.width; x++) {

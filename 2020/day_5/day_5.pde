@@ -1,8 +1,10 @@
+import java.util.List;
+
 float margin = 50;
 
 float noiseDepth = 0;
 int pointSeparation = 3;
-ArrayList<PVector> boids;
+List<PVector> boids;
 
 void setup() {
   size(500, 500);

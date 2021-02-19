@@ -1,7 +1,9 @@
+import java.util.List;
+
 float margin = 60;
 
 float offset = 0;
-ArrayList<Particle> particles;
+List<Particle> particles;
 float searchRadius = 20;
 
 

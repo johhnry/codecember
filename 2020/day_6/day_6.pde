@@ -1,3 +1,5 @@
+import java.util.List;
+
 // The radius of the circles
 int minRadius = 50;
 int maxRadius = 190;
@@ -13,7 +15,7 @@ int maxSnakeSize = cols / 2;
 
 float turnPercent = 0.03;
 
-ArrayList<Snake> snakes;
+List<Snake> snakes;
 
 
 /* 
@@ -45,7 +47,7 @@ class Location {
  */
 class Snake {
   // Stores a list of positions
-  ArrayList<Location> positions;
+  List<Location> positions;
 
   // value to prevent the snake to turn twice
   boolean justTurned = false;

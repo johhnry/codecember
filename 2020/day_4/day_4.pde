@@ -1,3 +1,5 @@
+import java.util.List;
+
 float margin = 50;
 
 // Rössler attractor parameters
@@ -14,7 +16,7 @@ int maxPoints = 4000;
 
 float angle = 0;
 
-ArrayList<PVector> points;
+List<PVector> points;
 
 void setup() {
   size(500, 500, P3D);
